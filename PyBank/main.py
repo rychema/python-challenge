@@ -54,20 +54,22 @@ with open(budget_data, newline="") as csvfile:
     print("Greatest Decrease in Profits: " + str(months[profitlosses_change.index(min(profitlosses_change))+1]) + " " + "$" + str(greatest_decrease))
 
     # output to a text file
-    file = open("output.txt","w")
 
-    file.write("Financial Analysis" + "\n")
+    text_path = os.path.join("C:\\Users\\ryche\\Desktop\\python-challenge\\PyBank\\final.txt")
+    with open(text_path, 'w') as file:
 
-    file.write("...................................................................................." + "\n")
+      file.write("Financial Analysis" + "\n")
 
-    file.write("total months: " + str(total_months) + "\n")
+      file.write("...................................................................................." + "\n")
 
-    file.write("Total: " + "$" + str(sum(Profit_losses)) + "\n")
+      file.write("total months: " + str(total_months) + "\n")
 
-    file.write("Average change: " + "$" + str(profitlosses_average) + "\n")
+      file.write("Total: " + "$" + str(sum(Profit_losses)) + "\n")
 
-    file.write("Greatest Increase in Profits: " + str(months[profitlosses_change.index(max(profitlosses_change))+1]) + " " + "$" + str(greatest_increase) + "\n")
+      file.write("Average change: " + "$" + str(profitlosses_average) + "\n")
 
-    file.write("Greatest Decrease in Profits: " + str(months[profitlosses_change.index(min(profitlosses_change))+1]) + " " + "$" + str(greatest_decrease) + "\n")
+      file.write("Greatest Increase in Profits: " + str(months[profitlosses_change.index(max(profitlosses_change))+1]) + " " + "$" + str(greatest_increase) + "\n")
 
-    file.close()
+      file.write("Greatest Decrease in Profits: " + str(months[profitlosses_change.index(min(profitlosses_change))+1]) + " " + "$" + str(greatest_decrease) + "\n")
+
+      file.close()
